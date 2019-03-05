@@ -21,7 +21,7 @@ class PresentacionBiblia(object):
     <head>
         <meta charset="UTF-8">
         <title>Yo soy el camino, y la verdad, y la vida </title>
-        
+        <link rel="stylesheet" type="text/css" href="urlhojadeestilos.css">
     </head>
    <body>
     <div id="header">
