@@ -16,7 +16,8 @@ class PresentacionBiblia(object):
     Esta clase contempla la vista de los libros y capÃ­tulos de la Biblia. Se basa en propiedades tipo string que contendrÃ¡n los diferentes
      elementos y etiquetas html que serÃ¡n visualizados de forma estÃ¡tico generalmente.
     '''
-    segmento1 = '''<!DOCTYPE html>
+    segmento1 = '''
+     ï»¿<!DOCTYPE html>
      <html>
     <head>
         <meta charset="UTF-8">
