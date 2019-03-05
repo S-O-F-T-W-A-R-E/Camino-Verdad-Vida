@@ -13,11 +13,11 @@ from ficheros.GestionFicheros import GestionFicherosTexto
 
 class PresentacionBiblia(object):
     '''
-    Esta clase contempla la vista de los libros y capítulos de la Biblia. Se basa en propiedades tipo string que contendrán los diferentes
-     elementos y etiquetas html que serán visualizados de forma estático generalmente.
+    Esta clase contempla la vista de los libros y capÃ­tulos de la Biblia. Se basa en propiedades tipo string que contendrÃ¡n los diferentes
+     elementos y etiquetas html que serÃ¡n visualizados de forma estÃ¡tico generalmente.
     '''
     segmento1 = '''
-     ﻿<!DOCTYPE html>
+     ï»¿<!DOCTYPE html>
      <html>
     <head>
         <meta charset="UTF-8">
@@ -85,7 +85,7 @@ class PresentacionBiblia(object):
     </head>
    <body>
     <div id="header">
-        <h1>Jesús le dijo: Yo soy el camino, y la verdad, y la vida; nadie viene al Padre, sino por mí.</h1>
+        <h1>JesÃºs le dijo: Yo soy el camino, y la verdad, y la vida; nadie viene al Padre, sino por mÃ­.</h1>
     </div>
     <div id="content">
 
@@ -116,15 +116,15 @@ class PresentacionBiblia(object):
 class ConformarPaginaHTML:
     def __init__(self, tipoPagina,urlSolicitada):        
         '''
-        Inicializa la variable tipoPagina la cual será utilizada para determinar que tipo de plantilla será conformada
+        Inicializa la variable tipoPagina la cual serÃ¡ utilizada para determinar que tipo de plantilla serÃ¡ conformada
         '''
         self.tipoPagina = tipoPagina
         self.urlSolicitada = urlSolicitada
         
     def conformandoPagina(self):
         '''
-        Concatena las variables que contienen los elementos html de las plantillas y las variables dinámicas. 
-        Estas variables dinámicas serán gestionadas por diferentes métodos, las mismas estarán vinculadas tanto
+        Concatena las variables que contienen los elementos html de las plantillas y las variables dinÃ¡micas. 
+        Estas variables dinÃ¡micas serÃ¡n gestionadas por diferentes mÃ©todos, las mismas estarÃ¡n vinculadas tanto
          a ficheros de textos como a bases de datos
         '''
         if self.tipoPagina == 'biblia':
@@ -143,8 +143,8 @@ class ConformarPaginaHTML:
     
     def gestionarContenidoBody(self):
         '''
-        Se gestiona el contenido de la página solicitada utilizando el diccionario que se gestiona a través del módulo GestionFicheros, 
-        usando expecíficamente el método gestionarTitulosLibrosTitulosFicherosBiblia()         
+        Se gestiona el contenido de la pÃ¡gina solicitada utilizando el diccionario que se gestiona a travÃ©s del mÃ³dulo GestionFicheros, 
+        usando expecÃ­ficamente el mÃ©todo gestionarTitulosLibrosTitulosFicherosBiblia()         
         '''
         if self.tipoPagina == 'biblia':   
             plantilla = PresentacionBiblia()
