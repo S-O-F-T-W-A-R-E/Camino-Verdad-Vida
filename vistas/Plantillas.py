@@ -22,66 +22,7 @@ class PresentacionBiblia(object):
     <head>
         <meta charset="UTF-8">
         <title>Yo soy el camino, y la verdad, y la vida </title>
-        <style type="text/css">
-        body { /* Redefinimos la etiqueta body */
-            padding: 0px;
-            margin: 0px;
-            font-family: arial, helvetica;
-            width: 80%;
-            margin: 0 auto; 
-        }
-        h1, h2 { /* Redefinimos las etiquetas de cabecera */
-            color: navy;
-        }
-        #header { /* Estilo para la cabecera usando su identificador */
-            padding: 15px 20px;
-            background-color: #E3DAFF;
-            border-bottom: 1px solid silver; 
-        }
-        #article
-        { background:#c0c0c0;
-         color:#000080;
-         font-family:"Century Gothic";
-         float: left;
-         width: 80%;
-         }
-        #sidebar {
-            float: left;
-            width: 15%;
-        }
-        #article {
-            float: left;
-            width: 80%;
-        }
-        #footer {
-            clear: both; 
-            text-align: center;
-            border-top: 1px solid silver; 
-            font-size: small;
-            color: gray;
-            background-color: #E3DAFF;
-            padding: 20px;
-        }
-        #sidebar a { /* Estilo para los enlaces de la barra lateral */
-            text-transform: uppercase;
-            text-decoration: none;
-            padding: 1px 5px; 
-            display: block; 
-        }
-        #sidebar a:hover { /* Pseudo-clase para los enlaces */
-            background-color: navy;
-            color: white; 
-        }
-        #article p {
-            line-height: 20pt;
-        }
-        .nota { /* Definimos la clase .nota */
-            background-color: yellow;
-        }
-        .alineado-derecha { /* Definimos la clase .alineado-derecha */
-            text-align: right;
-        }
-    </style>
+        
     </head>
    <body>
     <div id="header">
