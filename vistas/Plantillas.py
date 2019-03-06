@@ -71,6 +71,10 @@ class PresentacionBiblia(object):
             background-color: navy;
             color: white; 
         }
+        
+        #sidebar a:visited{
+            color: blue
+        }
         #article p {
             line-height: 20pt;
         }
