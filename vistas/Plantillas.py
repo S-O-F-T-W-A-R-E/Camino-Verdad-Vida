@@ -7,7 +7,8 @@ Created on Feb 16, 2019
 import os
 import sys
 path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-filename = os.path.join(path, 'librostxt/tituloslibrosbiblia.txt')
+pathTitulosLibrosTxt = os.path.join(path, 'librostxt/tituloslibrosbiblia.txt')
+pathLibrosCompletos = os.path.join(path, 'librostxt')
 sys.path.insert(0,path)
 
 from ficheros.GestionFicheros import GestionFicherosTexto
@@ -134,7 +135,7 @@ class ConformarPaginaHTML:
         if self.tipoPagina == 'biblia':
             plantilla = PresentacionBiblia()
             titulosLibros = GestionFicherosTexto()
-            nombreFicherosTitulosLibros = titulosLibros.gestionarTitulosLibrosTitulosFicherosBiblia(filename)
+            nombreFicherosTitulosLibros = titulosLibros.gestionarTitulosLibrosTitulosFicherosBiblia(pathTitulosLibrosTxt)
             listaTitulosRef = ''
             
             for nombreFichero, tituloLibro in nombreFicherosTitulosLibros.items():
@@ -155,10 +156,10 @@ class ConformarPaginaHTML:
             libros = GestionFicherosTexto()
             contenidoLibro = ""
             if self.urlSolicitada == "/":
-                contenidoLibro = libros.gestionarContenidoLibroCompletoTxt("librostxt/genesis.txt")
+                contenidoLibro = libros.gestionarContenidoLibroCompletoTxt(pathLibrosCompletos+"/genesis.txt")
                 return contenidoLibro
             
-            nombreFicherosTitulosLibros = libros.gestionarTitulosLibrosTitulosFicherosBiblia(filename)
+            nombreFicherosTitulosLibros = libros.gestionarTitulosLibrosTitulosFicherosBiblia(pathTitulosLibrosTxt)
             for nombreFichero, tituloLibro in nombreFicherosTitulosLibros.items():
                 #print(nombreFichero.rstrip('\n') + self.urlSolicitada.split("/")[2].rstrip('\n'))
                 if nombreFichero.rstrip('\n') == self.urlSolicitada.split("/")[2].rstrip('\n'):
@@ -169,7 +170,7 @@ class ConformarPaginaHTML:
     
     def obtenerContenidoLibroCompletoTxt(self):        
         titulosLibros = GestionFicherosTexto()
-        nombreFicherosTitulosLibros = titulosLibros.gestionarTitulosLibrosTitulosFicherosBiblia(filename)
+        nombreFicherosTitulosLibros = titulosLibros.gestionarTitulosLibrosTitulosFicherosBiblia(pathTitulosLibrosTxt)
         return nombreFicherosTitulosLibros
             
 # algo = ConformarPaginaHTML('biblia','/libros/genesis')
