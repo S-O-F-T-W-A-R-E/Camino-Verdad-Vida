@@ -16,5 +16,5 @@ def application(environ, start_response):
             urlHome += environ['SERVER_NAME']
     paginaWebCompleta = ConformarPaginaHTML('biblia',environ["PATH_INFO"], urlHome)
     presentacionBiblia = paginaWebCompleta.conformandoPagina()
-    respuesta = presentacionBiblia
+    respuesta = "presentacionBiblia"
     return [respuesta.encode()]
