@@ -7,6 +7,7 @@ Created on Feb 16, 2019
 import os
 import sys
 path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+filename = os.path.join(path, 'librostxt/tituloslibrosbiblia.txt')
 sys.path.insert(0,path)
 
 from ficheros.GestionFicheros import GestionFicherosTexto
@@ -133,7 +134,7 @@ class ConformarPaginaHTML:
         if self.tipoPagina == 'biblia':
             plantilla = PresentacionBiblia()
             titulosLibros = GestionFicherosTexto()
-            nombreFicherosTitulosLibros = titulosLibros.gestionarTitulosLibrosTitulosFicherosBiblia("librostxt/tituloslibrosbiblia.txt")
+            nombreFicherosTitulosLibros = titulosLibros.gestionarTitulosLibrosTitulosFicherosBiblia(filename)
             listaTitulosRef = ''
             
             for nombreFichero, tituloLibro in nombreFicherosTitulosLibros.items():
@@ -157,7 +158,7 @@ class ConformarPaginaHTML:
                 contenidoLibro = libros.gestionarContenidoLibroCompletoTxt("librostxt/genesis.txt")
                 return contenidoLibro
             
-            nombreFicherosTitulosLibros = libros.gestionarTitulosLibrosTitulosFicherosBiblia("librostxt/tituloslibrosbiblia.txt")
+            nombreFicherosTitulosLibros = libros.gestionarTitulosLibrosTitulosFicherosBiblia(filename)
             for nombreFichero, tituloLibro in nombreFicherosTitulosLibros.items():
                 #print(nombreFichero.rstrip('\n') + self.urlSolicitada.split("/")[2].rstrip('\n'))
                 if nombreFichero.rstrip('\n') == self.urlSolicitada.split("/")[2].rstrip('\n'):
@@ -165,6 +166,11 @@ class ConformarPaginaHTML:
                     contenidoLibro=libros.gestionarContenidoLibroCompletoTxt(rutaLibroTxt +".txt")
                     break
         return contenidoLibro
+    
+    def obtenerContenidoLibroCompletoTxt(self):        
+        titulosLibros = GestionFicherosTexto()
+        nombreFicherosTitulosLibros = titulosLibros.gestionarTitulosLibrosTitulosFicherosBiblia(filename)
+        return nombreFicherosTitulosLibros
             
 # algo = ConformarPaginaHTML('biblia','/libros/genesis')
 # print(algo.conformandoPagina())
