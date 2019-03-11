@@ -119,12 +119,13 @@ class PresentacionBiblia(object):
         Constructor
         '''
 class ConformarPaginaHTML:
-    def __init__(self, tipoPagina,urlSolicitada):        
+    def __init__(self, tipoPagina,urlSolicitada, urlHome):        
         '''
         Inicializa la variable tipoPagina la cual será utilizada para determinar que tipo de plantilla será conformada
         '''
         self.tipoPagina = tipoPagina
         self.urlSolicitada = urlSolicitada
+        self.urlHome = urlHome
         
     def conformandoPagina(self):
         '''
@@ -139,7 +140,7 @@ class ConformarPaginaHTML:
             listaTitulosRef = ''
             
             for nombreFichero, tituloLibro in nombreFicherosTitulosLibros.items():
-                listaTitulosRef+='''<a href="http://www.caminoverdadvida.net/libros/'''+ nombreFichero +'''">''' + tituloLibro + '''</a></br>'''
+                listaTitulosRef+='''<a href="'''+ self.urlHome +'''/libros/'''+ nombreFichero +'''">''' + tituloLibro + '''</a></br>'''
             contenidoBody = self.gestionarContenidoBody()   
             presentacionBiblia = plantilla.segmento1 + listaTitulosRef + plantilla.segmento2 + contenidoBody + plantilla.segmento3
         return presentacionBiblia
@@ -163,7 +164,7 @@ class ConformarPaginaHTML:
             for nombreFichero, tituloLibro in nombreFicherosTitulosLibros.items():
                 #print(nombreFichero.rstrip('\n') + self.urlSolicitada.split("/")[2].rstrip('\n'))
                 if nombreFichero.rstrip('\n') == self.urlSolicitada.split("/")[2].rstrip('\n'):
-                    rutaLibroTxt = ("librostxt/"+nombreFichero).rstrip('\n')
+                    rutaLibroTxt = (pathLibrosCompletos+ "/" + nombreFichero).rstrip('\n')
                     contenidoLibro=libros.gestionarContenidoLibroCompletoTxt(rutaLibroTxt +".txt")
                     break
         return contenidoLibro
