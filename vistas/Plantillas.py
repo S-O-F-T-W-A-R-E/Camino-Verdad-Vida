@@ -5,9 +5,11 @@ Created on Feb 16, 2019
 @author: cob19
 '''
 import os
+import sys
 path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 pathTitulosLibrosTxt = os.path.join(path, 'librostxt/tituloslibrosbiblia.txt')
 pathLibrosCompletos = os.path.join(path, 'librostxt')
+sys.path.insert(0,path)
 
 from ficheros.GestionFicheros import GestionFicherosTexto
 
