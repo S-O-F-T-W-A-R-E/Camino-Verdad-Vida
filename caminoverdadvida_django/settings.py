@@ -75,15 +75,6 @@ WSGI_APPLICATION = 'caminoverdadvida_django.passenger_wsgi.application'
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
 DATABASES = {
-   """ 'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'camino_verdad_vida_db',
-        'USER': 'root',
-        'PASSWORD': 'Mysql79*',
-        'HOST': 'localhost',
-        'PORT': '3306',
-    }
-    {"""
     
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
