@@ -1,0 +1,39 @@
+Génesis genesis
+Éxodo exodo
+Levítico levitico
+Números numeros
+Deuteronomio deuteronomio
+Josué josue
+Jueces jueces
+Rut rut
+1° de Samuel 1_samuel
+2° de Samuel 2_samuel
+1° de Reyes 1_reyes
+2° de Reyes 2_reyes
+1° de Crónicas 1_cronicas
+2° de Crónicas 2_cronicas
+Esdras esdras
+Nehemías nehemias
+Ester ester
+Job job
+Los Salmos salmos
+Proverbios proverbios
+Eclesiastés eclesiastes
+El Cantar de los Cantares cantar_de_los_cantares
+Isaías isaias
+Jeremías jeremias
+Lamentaciones de Jeremías lamentaciones
+Ezequiel ezequiel
+Daniel daniel
+Oseas oseas
+Joel joel
+Amós amos
+Abdías abdias
+Jonás jonas
+Miqueas miqueas
+Nahúm nahum
+Habacuc habacuc
+Sofonías sofonias
+Hageo hageo
+Zacarías zacarias
+Malaquías malaquias

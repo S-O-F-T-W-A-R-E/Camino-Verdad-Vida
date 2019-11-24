@@ -1,0 +1,245 @@
+{% load static %} {% load jsonF %}
+<!doctype html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+	<title>Yo soy el camino, y la verdad, y la vida</title>
+</head>
+
+<body onload="initial_function()">
+
+	<!--  <div class="row" id="header">
+		<div class="col">
+			<h1>Jesús le dijo: Yo soy el camino, y la verdad, y la vida;
+				nadie viene al Padre, sino por mí.</h1>
+		</div>-->
+	</div>
+	<div class="wrapper">
+		<nav id="sidebar">
+			<div class="sidebar-header">
+				<a href="#">Menú Pricipal</a>
+				<div id="close-sidebar">
+					<i class="fa fa-times"></i>
+				</div>
+			</div>
+
+			<div class="input-group" id="sidebar-search">
+				<input type="text" class="form-control" placeholder="Buscar" id="searchInputText">
+				<div class="input-group-append">
+					<button class="btn btn-info	" type="button" id="sidebar-search-button"
+						onclick="onClikSideBarButton()">
+						<i class="fa fa-search"></i>
+					</button>
+				</div>
+			</div>
+			<div>
+				<button type="button" id="sidebar-pruebas-button" onclick="onClikSideBarPruebasButton()">
+					<span>Pruebas</span>
+				</button>
+			</div>
+
+			<!--  <ul class="list-unstyled components">
+				<p>Dummy Heading</p>
+				<li class="active"><a href="#homeSubmenu"
+					data-toggle="collapse" aria-expanded="false"
+					class="dropdown-toggle">Home</a>
+					<ul class="collapse list-unstyled" id="homeSubmenu">
+						<li><a href="#">home1</a></li>
+						<li><a href="#">home2</a></li>
+						<li><a href="#">home3</a></li>
+					</ul></li>
+
+				<li><a href="#">About</a></li>
+				<li><a href="#pageSubmenu" data-toggle="collapse"
+					aria-expanded="false" class="dropdown-toggle">Page</a>
+					<ul class="collapse list-unstyled" id="pageSubmenu">
+						<li><a href="#">page1</a></li>
+						<li><a href="#">page2</a></li>
+						<li><a href="#">page3</a></li>
+					</ul></li>
+				<li><a href="#">Services</a></li>
+				<li><a href="#">Contact Us</a></li>
+			</ul>
+
+			<ul class="list-unstyled CTAs">
+				<li><a href="#" class="download">Download code</a></li>
+				<li><a href="#" class="article">article</a></li>
+			</ul>    -->
+		</nav>
+		<div class="container-fluid">
+			<!-- Content here -->
+			<div class="content">
+
+				<div class="row">
+					<div class="col-sm-2">
+
+						</br>
+					</div>
+					<div class="col-sm">
+						<div class="row sticky-top">
+							<div class="col" id="arriba">
+								<nav class="navbar navbar-expand-sm navbar-custom justify-content-center sticky-top "
+									id="navBarHome">
+									<button type="button" id="sidebarCollapse" class="btn btn-sm sticky-top">
+										<i class="fa fa-align-justify"></i> <span>Menú</span>
+									</button>
+								</nav>
+							</div>
+							<div class="w-100"></div>
+							<div class="col" id="abajo">
+								<nav class="navbar navbar-expand-xl navbar-custom justify-content-center sticky-top sticky-offset "
+									id="navBarCustomSearch">
+									<div class="input-group">
+										<div class="input-group-prepend mr-auto">
+											<button class="btn btn-success " type="button"
+												onclick="onclickPreviousChapterButton()" id="previousChapterButton">
+												<<</button> </div> <button class="navbar-toggler mr-auto" type="button"
+													id="navbarButton" data-toggle="collapse"
+													data-target="#navbarTogglerCollapse"
+													aria-controls="navbarTogglerCollapse" aria-expanded="false"
+													aria-label="Toggle navigation">
+													<span class="small">Opciones</span>
+											</button>
+
+											<div class="collapse navbar-collapse" id="navbarTogglerCollapse">
+												<select class="custom-select" id="testamentSelect"
+													aria-label="Testament selection" onChange=onChangeTestamentSelect()>
+													<option value="AT">AT</option>
+													<option value="NT">NT</option>
+												</select> <select class="custom-select" id="bookSelect"
+													aria-label="Book Selection" onChange=onChangeBookSelect()>
+												</select> <select class="custom-select" id="chapterSelect"
+													aria-label="Chapter selection" onChange=onChangeChapterSelect()>
+												</select> <input type="text" class="form-control" id="verseInitialText"
+													aria-label="Initial verse" placeholder="V-i" value="3"> <input
+													type="text" class="form-control" id="verseFinalText"
+													aria-label="Final verse" placeholder="V-f" value="31">
+												<button type="button" class="btn btn-info" onclick="onclickgoButton()"
+													id="goButton">IR</button>
+											</div>
+											<div class="input-group-append">
+												<button class="btn btn-success" type="button"
+													onclick="onclickNextChapterButton()"
+													id="nextChapterButton">>></button>
+											</div>
+										</div>
+								</nav>
+							</div>
+						</div>
+
+
+
+						<div class="row">
+							<div class="contenido">
+
+								<h5 id="otherHeader"></h5>
+								<h2 id="chapterHeader"></h2>
+
+								<p id="content-paragraph"></p>
+								<p id="p2"> </p>
+								<p id="p3"></p>
+								<p id="p4"></p>
+							</div>
+						</div>
+
+					</div>
+					<div class="col-sm-2"></div>
+
+
+
+				</div>
+
+
+
+			</div>
+		</div>
+
+
+
+
+
+
+	</div>
+
+	<!-- JavaScript Proyect -->
+	<script type="text/javascript" src="{% static 'js/Event.js' %}"> </script>
+	<script type="text/javascript" src="{% static 'js/Content.js' %}"> </script>
+	<script type="text/javascript" src="{% static 'js/NavBarCustomSearch.js' %}"> </script>
+	<script type="text/javascript" src="{% static 'js/SideBarSearch.js' %}"> </script>
+	<script type="text/javascript" src="{% static 'js/PersonalLibrary.js' %}"> </script>
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script type="text/javascript" src="{% static 'bootstrap/js/jquery-3.3.1.slim.min.js' %}"> </script>
+	<script type="text/javascript" src="{% static 'bootstrap/js/popper.min.js' %}"> </script>
+	<script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.min.js' %}"> </script>
+	
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+		integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+		integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+		crossorigin="anonymous"></script>
+
+	<script>
+		var bibleBooks = {{ name | js }};
+		var c = 0;
+		manipulator = new ManipulatorNavBarCustomSearch();
+		var chaptersWithTextsPositions =[];
+
+		/**
+		 * Sidebar
+		 */
+		$(document).ready(
+			function () {
+				"use strict"
+
+				function getBootstrapDeviceSize() {
+					return $('#device-size-detector').find('div:visible')
+						.first().attr('id');
+				}
+
+				$('#close-sidebar').on('click', function () {
+					// hide sidebar
+					$('#sidebar').toggleClass('active');
+				});
+				//$(window).on('resize', checkMenu);
+
+				$('#sidebarCollapse').on('click', function () {
+					$('#sidebar').toggleClass('active');
+				});
+			});
+
+		function initial_function() {
+			showSideBar();
+			manipulator.populateBookSelect();
+			ContentUpdater.updateContentNavBarCustomSearch();
+		}
+
+		function showSideBar() {
+			var screen = $(window).width();
+			if (screen <= 768) {
+				$('#sidebar').toggleClass('active');
+			} else {
+				$('#sidebar').toggleClass('');
+			}
+		}
+	</script>
+</body>
+
+</html>
