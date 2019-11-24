@@ -25,7 +25,7 @@ SECRET_KEY = '4r#-_wg_7%xi!ol!as^-xbeua+va%_&$wsjkbd#t#*g%5k#+xd'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["192.168.1.14", "localhost",]
+ALLOWED_HOSTS = ["127.0.0.1", "localhost",]
 
 
 # Application definition
@@ -74,8 +74,7 @@ WSGI_APPLICATION = 'caminoverdadvida_django.passenger_wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-DATABASES = {
-    
+DATABASES = {    
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
